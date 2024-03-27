@@ -8,5 +8,5 @@ Best practices of spring boot v3
 - Mapstruct
 - Flyway
 - Kafka
-- Junit
+- JUnit
 - Mockito
