@@ -8,16 +8,16 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
-public class GenericExceptionHandler {
+public class ApiExceptionHandler {
 
     @ExceptionHandler(EntityNotFoundException.class)
-    public ResponseEntity<GenericException> notFound() {
-        return new ResponseEntity<>(new GenericException(GenericErrorCode.NOT_FOUND, "Error when fetching data"), HttpStatus.NOT_FOUND);
+    public ResponseEntity<ApiException> notFound() {
+        return new ResponseEntity<>(ApiException.builder().code(ErrorCodeEnum.NOT_FOUND).message("Not found").build(), HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(ConstraintViolationException.class)
-    public ResponseEntity<GenericException> validationError() {
-        return new ResponseEntity<>(new GenericException(GenericErrorCode.BAD_REQUEST, "Error when validating"), HttpStatus.BAD_REQUEST);
+    public ResponseEntity<ApiException> notValid() {
+        return new ResponseEntity<>(ApiException.builder().code(ErrorCodeEnum.NOT_VALID).message("Not valid").build(), HttpStatus.BAD_REQUEST);
     }
 
 }

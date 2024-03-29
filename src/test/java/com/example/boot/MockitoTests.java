@@ -1,7 +1,10 @@
 package com.example.boot;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -41,8 +44,17 @@ public class MockitoTests {
     @Test
     void test_json_write_ok() throws JsonProcessingException {
         var mapper = new ObjectMapper();
-        assertEquals("{\"id\":1,\"title\":\"hello\"}",
-                mapper.writeValueAsString(new HelloJson(1L, "hello")), "null");
+
+        @Data
+        @AllArgsConstructor
+        class Dummy {
+            private Long id;
+            @JsonIgnore
+            private String title;
+        }
+        var jsonDummy = mapper.writeValueAsString(new Dummy(1L, "hello"));
+
+        assertEquals("{\"id\":1}", jsonDummy, "null");
     }
 
     @Test
@@ -59,9 +71,6 @@ public class MockitoTests {
         var jsonNode = mapper.readTree(response.body());
 
         assertEquals(1, jsonNode.get("id").asInt());
-    }
-
-    private record HelloJson(Long id, String title) {
     }
 
 }
