@@ -17,7 +17,7 @@ public class SchedulerConfig {
 
     private final BookRepository bookRepository;
 
-    @Scheduled(fixedRate = 5000)
+    @Scheduled(fixedRate = 60000, initialDelay = 30000)
     public void debugRepository() {
         var books = bookRepository.queryAll();
         log.info("Authors: {}", books

@@ -1,6 +1,6 @@
 # spring-boot-3
 
-Best practices of spring boot v3 
+Recipes of spring boot 3 and spring 6 
 
 ##  Features
 - OpenApi
@@ -10,3 +10,5 @@ Best practices of spring boot v3
 - Kafka
 - JUnit
 - Mockito
+
+
