@@ -1,10 +1,10 @@
-package com.example.boot.common;
+package com.example.boot.common.converter;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
 
 @Converter
-public class TrimConverter implements AttributeConverter<String, String> {
+public class TrimAttributeConverter implements AttributeConverter<String, String> {
 
     @Override
     public String convertToDatabaseColumn(String title) {

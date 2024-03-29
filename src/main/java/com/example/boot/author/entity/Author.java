@@ -1,7 +1,8 @@
 package com.example.boot.author.entity;
 
 import com.example.boot.book.entity.Book;
-import com.example.boot.common.TrimConverter;
+import com.example.boot.common.converter.TrimAttributeConverter;
+import com.example.boot.common.validator.CheckAuthorNameContainsXxx;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -13,6 +14,7 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
+@CheckAuthorNameContainsXxx
 public class Author {
 
     @Id
@@ -22,7 +24,7 @@ public class Author {
 
     @NotNull
     @Size(min = 3, max = 50)
-    @Convert(converter = TrimConverter.class)
+    @Convert(converter = TrimAttributeConverter.class)
     private String name;
 
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true)

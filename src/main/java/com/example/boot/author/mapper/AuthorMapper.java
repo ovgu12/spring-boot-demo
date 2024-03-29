@@ -11,6 +11,7 @@ import org.mapstruct.ReportingPolicy;
 public interface AuthorMapper {
 
     @Mapping(target = "name")
+    @Mapping(target = "id", ignore = true)
     Author toEntity(AuthorDTO authorDTO);
 
     @Mapping(target = "id")

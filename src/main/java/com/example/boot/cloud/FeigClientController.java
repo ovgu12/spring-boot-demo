@@ -3,6 +3,7 @@ package com.example.boot.cloud;
 import com.example.boot.kafka.KafkaProducer;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,9 +25,13 @@ public class FeigClientController {
 
     private final FeigClientService feigClientService;
 
+    @Value("spring|cloud")
+    private FeigClientMeta feigClientMeta;
+
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @RequestMapping("/feig")
     public List<TypicodePost> feig() {
+        log.info("Meta property editor {}", feigClientMeta);
         return feigClientService.getPosts();
     }
 

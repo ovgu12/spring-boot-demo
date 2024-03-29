@@ -1,7 +1,7 @@
 package com.example.boot.book.entity;
 
 import com.example.boot.author.entity.Author;
-import com.example.boot.common.TrimConverter;
+import com.example.boot.common.converter.TrimAttributeConverter;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -20,7 +20,7 @@ public class Book {
 
     @NotNull
     @Size(min = 3, max = 50)
-    @Convert(converter = TrimConverter.class)
+    @Convert(converter = TrimAttributeConverter.class)
     private String title;
 
     @ManyToOne
