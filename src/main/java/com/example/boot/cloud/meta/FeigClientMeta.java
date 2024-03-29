@@ -1,4 +1,4 @@
-package com.example.boot.cloud;
+package com.example.boot.cloud.meta;
 
 import lombok.Builder;
 import lombok.Data;
@@ -7,4 +7,5 @@ import lombok.Data;
 @Data
 public class FeigClientMeta {
     private String name;
+    private String feature;
 }

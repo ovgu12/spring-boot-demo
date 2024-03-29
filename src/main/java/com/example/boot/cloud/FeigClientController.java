@@ -1,5 +1,6 @@
 package com.example.boot.cloud;
 
+import com.example.boot.cloud.meta.FeigClientMeta;
 import com.example.boot.kafka.KafkaProducer;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +26,7 @@ public class FeigClientController {
 
     private final FeigClientService feigClientService;
 
-    @Value("spring|cloud")
+    @Value("#{typicodeProperties.tags}")
     private FeigClientMeta feigClientMeta;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)

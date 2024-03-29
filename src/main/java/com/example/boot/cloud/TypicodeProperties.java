@@ -13,4 +13,5 @@ import org.springframework.context.annotation.PropertySource;
 @Setter
 public class TypicodeProperties {
     private String host;
+    private String tags;
 }

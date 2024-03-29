@@ -13,7 +13,6 @@ public class NonBlocking {
                 .thenAccept(log::info)
                 .thenRun(() -> log.info("And Bye"));
         fut.join();
-        // Alternatively fut.get()
     }
 
 }
