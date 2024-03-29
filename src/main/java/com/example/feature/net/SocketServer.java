@@ -10,9 +10,7 @@ public class SocketServer {
     public static void main(String[] args) {
         try (var server = new ServerSocket(9999);
              var client = server.accept();
-             var in = client.getInputStream()
-        ) {
-            // Receive from client
+             var in = client.getInputStream()) {
             log.info("Incoming " + new String(in.readAllBytes()));
         } catch (Exception e) {
             log.debug("Error", e);
