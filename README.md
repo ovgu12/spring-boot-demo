@@ -1,4 +1,4 @@
-# spring-boot-3
+# spring-boot
 
 Recipes of spring boot 3 and spring 6 
 

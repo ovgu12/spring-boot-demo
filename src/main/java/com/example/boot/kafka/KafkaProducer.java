@@ -10,9 +10,6 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class KafkaProducer {
 
-    /**
-     * Simple String message template
-     */
     private final KafkaTemplate<String, String> kafkaTemplate;
 
     public void sendMessage(String message) {
