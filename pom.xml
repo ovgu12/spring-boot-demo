@@ -143,7 +143,7 @@
 							<generatorName>spring</generatorName>
 							<modelPackage>com.example.boot.cloud</modelPackage>
 							<configOptions>
-								<documentationProvider></documentationProvider>
+								<documentationProvider>none</documentationProvider>
 								<openApiNullable>false</openApiNullable>
 							</configOptions>
 						</configuration>
