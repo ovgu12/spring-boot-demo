@@ -12,7 +12,7 @@ import java.net.URL;
 import java.util.Arrays;
 
 @Slf4j
-public class URLConnection {
+public class NetApplication {
 
     public static void main(String[] args) {
         try {

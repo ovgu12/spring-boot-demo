@@ -1,4 +1,4 @@
-package com.example.boot.configuration;
+package com.example.boot.scheduling;
 
 import com.example.boot.book.repository.BookRepository;
 import lombok.RequiredArgsConstructor;

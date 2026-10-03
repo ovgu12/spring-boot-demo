@@ -6,13 +6,13 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
 @Slf4j
-public class NonBlocking {
+public class NonBlockingApplication {
 
     static void runTest(String message) {
         CompletableFuture.supplyAsync(() -> message);
     }
 
-    static String getMessage() {
+    static String failedMessage() {
         throw new RuntimeException("Failed");
     }
 
@@ -22,7 +22,7 @@ public class NonBlocking {
                     System.out.println(res);
                 })
                 .thenRun(() -> {
-                    runTest(getMessage());
+                    runTest(failedMessage());
                 })
                 .whenComplete((res, err) -> {
                     if (err != null) {

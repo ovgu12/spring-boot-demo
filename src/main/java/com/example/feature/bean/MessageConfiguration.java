@@ -1,4 +1,4 @@
-package com.example.feature.di;
+package com.example.feature.bean;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

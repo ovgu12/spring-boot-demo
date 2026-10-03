@@ -24,7 +24,7 @@ public class CloudController {
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @RequestMapping("/rest")
-    public List<TypicodePost> rtl() {
+    public List<TypicodePost> rest() {
         var result = new RestTemplate().getForEntity(typicodeProperties.getHost() + "/posts", TypicodePost[].class);
         if (result.getBody() == null) {
             return Collections.emptyList();

@@ -1,4 +1,4 @@
-package com.example.feature.di;
+package com.example.feature.bean;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;

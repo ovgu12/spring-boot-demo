@@ -1,4 +1,4 @@
-package com.example.boot.exeptions;
+package com.example.boot.exeption;
 
 import lombok.Builder;
 import lombok.Getter;

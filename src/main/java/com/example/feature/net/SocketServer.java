@@ -11,7 +11,7 @@ public class SocketServer {
         try (var server = new ServerSocket(9999);
              var client = server.accept();
              var in = client.getInputStream()) {
-            log.info("Incoming " + new String(in.readAllBytes()));
+            log.info("Incoming {}", new String(in.readAllBytes()));
         } catch (Exception e) {
             log.debug("Error", e);
         }

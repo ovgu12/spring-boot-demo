@@ -1,4 +1,4 @@
-package com.example.feature.di;
+package com.example.feature.bean;
 
 public interface Message {
 

@@ -6,9 +6,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.test.context.ActiveProfiles;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @DataJpaTest
 class AuthorRepositoryTest {
@@ -18,20 +18,19 @@ class AuthorRepositoryTest {
 
     @BeforeEach
     void setUp() {
-        authorRepository.deleteAll();
-    }
-
-    @Test
-    public void contextLoads() {
         var author = new Author();
         author.setName("Spring");
         authorRepository.save(author);
-        assertNotNull(authorRepository);
+    }
+
+    @Test
+    public void has_one_author() {
         assertEquals(1, authorRepository.findAll().size());
     }
 
     @AfterEach
     void tearDown() {
+        authorRepository.deleteAll();
     }
 
 }

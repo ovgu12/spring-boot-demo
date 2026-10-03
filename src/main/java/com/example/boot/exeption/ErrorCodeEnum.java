@@ -1,4 +1,4 @@
-package com.example.boot.exeptions;
+package com.example.boot.exeption;
 
 public enum ErrorCodeEnum {
     NOT_FOUND,

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class KafkaConsumer {
 
-    @KafkaListener(topics = KafkaUtil.TEST_TOPIC)
+    @KafkaListener(topics = KafkaConfig.TEST_TOPIC, autoStartup = "false")
     public void receive(ConsumerRecord<String, String> consumerRecord) {
         log.info("Received payload: '{}'", consumerRecord.value());
     }
