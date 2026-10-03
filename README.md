@@ -1,14 +1,13 @@
-# spring-boot
+# spring-boot-demo
 
 Recipes of spring boot 3 and spring 6 
 
 ##  Features
 - OpenApi
 - Lombok
-- Mapstruct
+- MapStruct
 - Flyway
 - Kafka
-- JUnit
-- Mockito
+
 
 

@@ -1,0 +1,5 @@
+name: localhost
+variables:
+  - name: HOST
+    value: localhost:3300
+    description: ""

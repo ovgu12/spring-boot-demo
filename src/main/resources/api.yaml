@@ -5,7 +5,7 @@ info:
     Example of using OpenApi with spring boot 3
   version: 1.0.0
 paths:
-  /cloud/feig:
+  /typicode:
     get:
       summary: List of posts
       description: Fetch list of posts

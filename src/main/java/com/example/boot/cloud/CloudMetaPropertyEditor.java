@@ -1,13 +1,13 @@
-package com.example.boot.cloud.meta;
+package com.example.boot.cloud;
 
 import java.beans.PropertyEditorSupport;
 
-public class FeigClientMetaPropertyEditor extends PropertyEditorSupport {
+public class CloudMetaPropertyEditor extends PropertyEditorSupport {
 
     @Override
     public void setAsText(String text) {
         var tags = text.split("\\|");
-        setValue(FeigClientMeta.builder()
+        setValue(CloudMeta.builder()
                 .name(tags[0])
                 .feature(tags[1])
                 .build());
